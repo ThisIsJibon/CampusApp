@@ -2,6 +2,7 @@ package com.example.campusapp
 
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.text.Html
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -57,7 +58,7 @@ class BlogDetailsActivity : AppCompatActivity() {
         textAuthor.text = blog.author.name
         textRating.text = blog.rating.toString()
         textViews.text = String.format("(%d views)", blog.views)
-        textDescription.text = blog.description
+        textDescription.text = Html.fromHtml(blog.description)
         blogRatingBar.rating = blog.rating
 
         Glide.with(this)
@@ -93,5 +94,9 @@ class BlogDetailsActivity : AppCompatActivity() {
         blogRatingBar.setRating(4.4f)
         backIcon.setOnClickListener { v->finish() }
 
+    }
+
+    fun backIconAction(view: View) {
+        finish()
     }
 }
