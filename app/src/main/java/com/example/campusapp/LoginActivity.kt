@@ -30,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
         var editor = sharedPreferences.edit()
         var isLoggedIn=sharedPreferences.getBoolean("BOOLEAN_KEY",false)
         if(isLoggedIn){
+
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
@@ -111,7 +112,6 @@ class LoginActivity : AppCompatActivity() {
 
     fun loginButtonAction(v: View){
         loginValidation()
-       // loginProgress()
     }
 
 }

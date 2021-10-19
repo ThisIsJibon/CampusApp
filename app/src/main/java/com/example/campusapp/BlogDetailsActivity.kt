@@ -10,12 +10,28 @@ import kotlinx.android.synthetic.main.activity_blog_details.*
 
 import java.lang.String
 
+private const val IMAGE_URL = "https://bitbucket.org/dmytrodanylyk/travel-blog-resources/raw/" +
+        "3436e16367c8ec2312a0644bebd2694d484eb047/images/sydney_image.jpg"
+private const val AVATAR_URL = "https://bitbucket.org/dmytrodanylyk/travel-blog-resources/raw/" +
+        "3436e16367c8ec2312a0644bebd2694d484eb047/avatars/avatar1.jpg"
 
 class BlogDetailsActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_blog_details)
         loadUI()
+        Glide.with(this)
+            .load(IMAGE_URL)
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(blogImageView)
+
+        Glide.with(this)
+            .load(AVATAR_URL)
+            .transform(CircleCrop())
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(imageAvatar)
+
 
     }
 
@@ -23,9 +39,7 @@ class BlogDetailsActivity : AppCompatActivity() {
     fun loadUI(){
         textAuthor.setText("Mehedi Hasan")
         blogTitleTextView.setText("Hello from Sydney!")
-        imageAvatar.setImageResource(R.drawable.avatar)
         dateTextView.setText("20 October, 2021")
-        blogImageView.setImageResource(R.drawable.sydney_image)
         textRating.setText("4.4")
         textViews.setText("(420 views)")
         textDescription.setText("Australia is one of the most popular travel destinations in the world.")
