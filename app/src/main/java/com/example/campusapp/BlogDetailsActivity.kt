@@ -2,12 +2,14 @@ package com.example.campusapp
 
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.campusapp.http.Blog
 import com.example.campusapp.http.BlogHttpClient
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_blog_details.*
 
 import java.lang.String
@@ -32,12 +34,24 @@ class BlogDetailsActivity : AppCompatActivity() {
                 runOnUiThread { showData(list[0]) } // 3
             },
             onError = {
-                // handle error
+                runOnUiThread { showErrorSnackBar() }
             }
         )
     }
+    fun showErrorSnackBar(){
+        Snackbar.make(activityBlogDetailsView,
+            "Error during loading blog articles", Snackbar.LENGTH_INDEFINITE).run {
+            setActionTextColor(resources.getColor(R.color.orange_500))
+            setAction("Retry") {
+                loadData()
+                dismiss()
+            }
+        }.show()
+    }
 
     private fun showData(blog: Blog) {
+        blogDetailsProgressBar.visibility= View.GONE
+
         blogTitleTextView.text = blog.title
         dateTextView.text = blog.date
         textAuthor.text = blog.author.name
