@@ -38,17 +38,26 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this) // 2
         recyclerView.adapter = adapter // 3
-
+        refreshLayout.setOnRefreshListener {
+            loadData()
+        }
         loadData()
     }
 
     private fun loadData() {
+        refreshLayout.isRefreshing = true // 2
         BlogHttpClient.loadBlogArticles(
             onSuccess = { blogList: List<Blog> ->
-                runOnUiThread { adapter.submitList(blogList) }
+                runOnUiThread {
+                    refreshLayout.isRefreshing = false // 3
+                    adapter.submitList(blogList)
+                }
             },
             onError = {
-                runOnUiThread { showErrorSnackbar() }
+                runOnUiThread {
+                    refreshLayout.isRefreshing = false // 3
+                    showErrorSnackbar()
+                }
             }
         )
     }
