@@ -58,11 +58,11 @@ class BlogDetailsActivity : AppCompatActivity() {
         textAuthor.text = blog.author.name
         textRating.text = blog.rating.toString()
         textViews.text = String.format("(%d views)", blog.views)
-<<<<<<< HEAD
+
         textDescription.text = Html.fromHtml(blog.description)
-=======
+
         textDescription.text = Html.fromHtml(blog.description )
->>>>>>> temp
+
         blogRatingBar.rating = blog.rating
 
         Glide.with(this)
