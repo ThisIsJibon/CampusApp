@@ -3,17 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
+<<<<<<< HEAD
     android:layout_height="match_parent">
 
+=======
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+>>>>>>> temp
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1.0"
+<<<<<<< HEAD
         android:orientation="vertical"
         >
 
         <TextView
             android:id="@+id/itemMainTextTitle"
+=======
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textTitle"
+>>>>>>> temp
             style="@style/TextAppearance.MaterialComponents.Headline6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,17 +33,29 @@
             tools:text="G'day from Sydney" />
 
         <TextView
+<<<<<<< HEAD
             android:id="@+id/itemMainTextDate"
+=======
+            android:id="@+id/textDate"
+>>>>>>> temp
             style="@style/TextAppearance.MaterialComponents.Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
             tools:text="August 2, 2019" />
 
+<<<<<<< HEAD
     </LinearLayout>
 
     <ImageView
         android:id="@+id/itemMainImageAvatar"
+=======
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageAvatar"
+>>>>>>> temp
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:scaleType="centerCrop"

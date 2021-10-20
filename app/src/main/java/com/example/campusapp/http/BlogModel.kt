@@ -11,6 +11,10 @@ data class Blog(
     val description: String,
     val views: Int,
     val rating: Float
-)
+){
+    fun getImageUrl() = BlogHttpClient.BASE_URL + BlogHttpClient.PATH + image
+}
 
-data class Author(val name: String, val avatar: String)
+data class Author(val name: String, val avatar: String){
+    fun getAvatarUrl() = BlogHttpClient.BASE_URL + BlogHttpClient.PATH + avatar
+}

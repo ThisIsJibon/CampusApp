@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/rootActivity">
+
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/mainToolbar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,4 +23,15 @@
             app:titleTextColor="@android:color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:listitem="@layout/item_main" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
