@@ -21,7 +21,6 @@ import com.example.campusapp.http.Blog
 import com.example.campusapp.http.BlogHttpClient
 import com.google.android.material.snackbar.Snackbar
 import com.example.campusapp.adapter.MainAdapter
-import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -36,26 +35,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        recyclerView.layoutManager = LinearLayoutManager(this) // 2
-        recyclerView.adapter = adapter // 3
-        refreshLayout.setOnRefreshListener {
+        binding.recyclerView.layoutManager = LinearLayoutManager(this) // 2
+        binding.recyclerView.adapter = adapter // 3
+        binding.refreshLayout.setOnRefreshListener {
             loadData()
         }
         loadData()
     }
 
     private fun loadData() {
-        refreshLayout.isRefreshing = true // 2
+        binding.refreshLayout.isRefreshing = true // 2
         BlogHttpClient.loadBlogArticles(
             onSuccess = { blogList: List<Blog> ->
                 runOnUiThread {
-                    refreshLayout.isRefreshing = false // 3
+                    binding.refreshLayout.isRefreshing = false // 3
                     adapter.submitList(blogList)
                 }
             },
             onError = {
                 runOnUiThread {
-                    refreshLayout.isRefreshing = false // 3
+                    binding.refreshLayout.isRefreshing = false // 3
                     showErrorSnackbar()
                 }
             }
@@ -63,7 +62,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showErrorSnackbar() {
-        Snackbar.make(rootActivity,
+        Snackbar.make(binding.rootActivity,
             "Error during loading blog articles", Snackbar.LENGTH_INDEFINITE).run {
             setActionTextColor(resources.getColor(R.color.orange_500))
             setAction("Retry") {

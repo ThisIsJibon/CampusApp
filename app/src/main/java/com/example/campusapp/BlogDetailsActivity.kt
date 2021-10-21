@@ -8,10 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.example.campusapp.databinding.ActivityBlogDetailsBinding
+import com.example.campusapp.databinding.ActivityMainBinding
 import com.example.campusapp.http.Blog
 import com.example.campusapp.http.BlogHttpClient
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_blog_details.*
 
 import java.lang.String
 
@@ -22,9 +23,14 @@ private const val AVATAR_URL = "https://bitbucket.org/dmytrodanylyk/travel-blog-
 
 class BlogDetailsActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityBlogDetailsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_blog_details)
+
+        binding = ActivityBlogDetailsBinding.inflate(layoutInflater) // 1
+        setContentView(binding.root)
 
         loadData()
     }
@@ -40,7 +46,7 @@ class BlogDetailsActivity : AppCompatActivity() {
         )
     }
     fun showErrorSnackBar(){
-        Snackbar.make(activityBlogDetailsView,
+        Snackbar.make(binding.activityBlogDetailsView,
             "Error during loading blog articles", Snackbar.LENGTH_INDEFINITE).run {
             setActionTextColor(resources.getColor(R.color.orange_500))
             setAction("Retry") {
@@ -51,29 +57,29 @@ class BlogDetailsActivity : AppCompatActivity() {
     }
 
     private fun showData(blog: Blog) {
-        blogDetailsProgressBar.visibility= View.GONE
+        binding.blogDetailsProgressBar.visibility= View.GONE
 
-        blogTitleTextView.text = blog.title
-        dateTextView.text = blog.date
-        textAuthor.text = blog.author.name
-        textRating.text = blog.rating.toString()
-        textViews.text = String.format("(%d views)", blog.views)
+        binding.blogTitleTextView.text = blog.title
+        binding.dateTextView.text = blog.date
+        binding.textAuthor.text = blog.author.name
+        binding.textRating.text = blog.rating.toString()
+        binding.textViews.text = String.format("(%d views)", blog.views)
 
-        textDescription.text = Html.fromHtml(blog.description)
+        binding.textDescription.text = Html.fromHtml(blog.description)
 
-        textDescription.text = Html.fromHtml(blog.description )
+        binding.textDescription.text = Html.fromHtml(blog.description )
 
-        blogRatingBar.rating = blog.rating
+        binding.blogRatingBar.rating = blog.rating
 
         Glide.with(this)
             .load(blog.image)
             .transition(DrawableTransitionOptions.withCrossFade())
-            .into(blogImageView)
+            .into(binding.blogImageView)
         Glide.with(this)
             .load(blog.author.avatar)
             .transform(CircleCrop())
             .transition(DrawableTransitionOptions.withCrossFade())
-            .into(imageAvatar)
+            .into(binding.imageAvatar)
     }
 
     fun loadUI(){
@@ -81,22 +87,22 @@ class BlogDetailsActivity : AppCompatActivity() {
         Glide.with(this)
             .load(IMAGE_URL)
             .transition(DrawableTransitionOptions.withCrossFade())
-            .into(blogImageView)
+            .into(binding.blogImageView)
 
         Glide.with(this)
             .load(AVATAR_URL)
             .transform(CircleCrop())
             .transition(DrawableTransitionOptions.withCrossFade())
-            .into(imageAvatar)
+            .into(binding.imageAvatar)
 
-        textAuthor.setText("Mehedi Hasan")
-        blogTitleTextView.setText("Hello from Sydney!")
-        dateTextView.setText("20 October, 2021")
-        textRating.setText("4.4")
-        textViews.setText("(420 views)")
-        textDescription.setText("Australia is one of the most popular travel destinations in the world.")
-        blogRatingBar.setRating(4.4f)
-        backIcon.setOnClickListener { v->finish() }
+        binding.textAuthor.setText("Mehedi Hasan")
+        binding.blogTitleTextView.setText("Hello from Sydney!")
+        binding.dateTextView.setText("20 October, 2021")
+        binding.textRating.setText("4.4")
+        binding.textViews.setText("(420 views)")
+        binding.textDescription.setText("Australia is one of the most popular travel destinations in the world.")
+        binding.blogRatingBar.setRating(4.4f)
+        binding.backIcon.setOnClickListener { v->finish() }
 
     }
 

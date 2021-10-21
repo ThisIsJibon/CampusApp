@@ -11,16 +11,23 @@ import android.view.View
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AlertDialog
+import com.example.campusapp.databinding.ActivityLoginBinding
+import com.example.campusapp.databinding.ActivityMainBinding
 import com.google.android.material.textfield.TextInputLayout
-import kotlinx.android.synthetic.main.activity_login.*
 import android.text.TextWatcher as TextWatcher
+
 
 class LoginActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        binding = ActivityLoginBinding.inflate(layoutInflater) // 1
+        setContentView(binding.root)
+
         addWatcher()
         checkLoginState()
     }
@@ -42,8 +49,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun addWatcher(){
-        textPasswordInput.editText?.addTextChangedListener(myWatcherMethod(textPasswordInput))
-        textUsernameLayout.editText?.addTextChangedListener(myWatcherMethod(textUsernameLayout))
+        binding.textPasswordInput.editText?.addTextChangedListener(myWatcherMethod(binding.textPasswordInput))
+        binding.textUsernameLayout.editText?.addTextChangedListener(myWatcherMethod(binding.textUsernameLayout))
     }
     fun myWatcherMethod(textInputLayout: TextInputLayout): TextWatcher{
         var textWatcher = object : TextWatcher{
@@ -63,10 +70,10 @@ class LoginActivity : AppCompatActivity() {
 
 
     fun loginProgress(){
-        loginProgressBar.visibility=View.VISIBLE
-        loginButton.visibility = View.INVISIBLE
-        textUsernameLayout.isEnabled = false
-        textPasswordInput.isEnabled=false
+        binding.loginProgressBar.visibility=View.VISIBLE
+        binding.loginButton.visibility = View.INVISIBLE
+        binding.textUsernameLayout.isEnabled = false
+        binding.textPasswordInput.isEnabled=false
         goToMainActivity()
     }
     fun goToMainActivity(){
@@ -79,16 +86,16 @@ class LoginActivity : AppCompatActivity() {
     }
     fun loginValidation(){
 
-        var username= textUsernameLayout.getEditText()?.getText().toString()
-        var password=textPasswordInput.getEditText()?.getText().toString()
+        var username= binding.textUsernameLayout.getEditText()?.getText().toString()
+        var password=binding.textPasswordInput.getEditText()?.getText().toString()
 
         if(username.isEmpty()){
-            textUsernameLayout.setError("username can't be empty")
-            textUsernameLayout.setErrorEnabled(true)
+            binding.textUsernameLayout.setError("username can't be empty")
+            binding.textUsernameLayout.setErrorEnabled(true)
         }
         if(password.isEmpty()){
-            textPasswordInput.setError("password can't be empty")
-            textPasswordInput.setErrorEnabled(true)
+            binding.textPasswordInput.setError("password can't be empty")
+            binding.textPasswordInput.setErrorEnabled(true)
         }
 
 
