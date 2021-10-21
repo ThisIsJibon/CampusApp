@@ -1,5 +1,7 @@
 package com.example.campusapp
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.text.Html
@@ -32,7 +34,19 @@ class BlogDetailsActivity : AppCompatActivity() {
         binding = ActivityBlogDetailsBinding.inflate(layoutInflater) // 1
         setContentView(binding.root)
 
-        loadData()
+        intent.extras?.getParcelable<Blog>(EXTRAS_BLOG)?.let { blog ->
+            showData(blog)
+        }
+
+    }
+    companion object {
+        private const val EXTRAS_BLOG = "EXTRAS_BLOG"
+
+        fun start(activity: Activity, blog: Blog) {
+            val intent = Intent(activity, BlogDetailsActivity::class.java)
+            intent.putExtra(EXTRAS_BLOG, blog)
+            activity.startActivity(intent)
+        }
     }
 
     private fun loadData() {
@@ -47,7 +61,8 @@ class BlogDetailsActivity : AppCompatActivity() {
     }
     fun showErrorSnackBar(){
         Snackbar.make(binding.activityBlogDetailsView,
-            "Error during loading blog articles", Snackbar.LENGTH_INDEFINITE).run {
+            "Error during loading blog articles\n" +
+                    "Check Your internet connection.", Snackbar.LENGTH_INDEFINITE).run {
             setActionTextColor(resources.getColor(R.color.orange_500))
             setAction("Retry") {
                 loadData()
@@ -72,11 +87,11 @@ class BlogDetailsActivity : AppCompatActivity() {
         binding.blogRatingBar.rating = blog.rating
 
         Glide.with(this)
-            .load(blog.image)
+            .load(blog.getImageUrl())
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(binding.blogImageView)
         Glide.with(this)
-            .load(blog.author.avatar)
+            .load(blog.author.getAvatarUrl())
             .transform(CircleCrop())
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(binding.imageAvatar)

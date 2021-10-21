@@ -26,7 +26,11 @@ import com.example.campusapp.adapter.MainAdapter
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val adapter = MainAdapter()
+   // private val adapter = MainAdapter()
+
+    private val adapter = MainAdapter { blog ->
+        BlogDetailsActivity.start(this, blog)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,7 +67,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun showErrorSnackbar() {
         Snackbar.make(binding.rootActivity,
-            "Error during loading blog articles", Snackbar.LENGTH_INDEFINITE).run {
+            "Error during loading blog articles.\nCheck Your internet connection.", Snackbar.LENGTH_INDEFINITE).run {
             setActionTextColor(resources.getColor(R.color.orange_500))
             setAction("Retry") {
                 loadData()
