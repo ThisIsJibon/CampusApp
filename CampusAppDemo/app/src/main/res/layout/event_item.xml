@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_marginStart="16dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/eventItemImageView"
+                android:layout_width="250dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/roundedImageView"
+                app:srcCompat="@drawable/sydney_image" />
+
+            <TextView
+                android:id="@+id/eventItemEventNameTextView"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Event Title"
+                android:textColor="@color/blue700"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/eventItemImageView" />
+
+            <ImageView
+                android:id="@+id/eventItemClockImageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/calendar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/eventItemEventNameTextView" />
+
+            <TextView
+                android:id="@+id/eventItemStartTimeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Fri 25 dec - 9:00 AM"
+                android:textSize="12sp"
+                android:textColor="@color/blue700"
+                app:layout_constraintBottom_toBottomOf="@id/eventItemClockImageView"
+                app:layout_constraintStart_toEndOf="@id/eventItemClockImageView"
+                app:layout_constraintTop_toTopOf="@id/eventItemClockImageView" />
+
+            <ImageView
+                android:id="@+id/eventItemLocationImageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/eventItemClockImageView" />
+
+            <TextView
+                android:id="@+id/eventItemEventLocationTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/cairolight"
+                android:text="Central Auditorium"
+                android:textColor="@color/blue700"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/eventItemLocationImageView"
+                app:layout_constraintStart_toEndOf="@id/eventItemLocationImageView"
+                app:layout_constraintTop_toTopOf="@id/eventItemLocationImageView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

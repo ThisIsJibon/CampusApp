@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateEventActivity"
+    android:fillViewport="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/createPostTopConstraintLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:id="@+id/createEventCancelImageView"
+                android:onClick="onCreateEventCancelImageViewClicked"
+                android:src="@drawable/close"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/cairoregular"
+                android:id="@+id/createEventHostButton"
+                android:text="Host"
+                android:textSize="20dp"
+                android:onClick="onCreateEventHostButtonClicked"
+                android:textColor="@color/blue700"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/createEventMainImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onCreateEventMainImageViewClicked"
+            android:scaleType="centerInside"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/createPostTopConstraintLayout" />
+
+        <EditText
+            android:id="@+id/createEventTitleEditText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="Event Title"
+            android:inputType="text|textMultiLine"
+            android:fontFamily="@font/cairobold"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createEventMainImageView"></EditText>
+
+        <EditText
+            android:id="@+id/createEventDescEditText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@null"
+            android:fontFamily="@font/cairoregular"
+            android:gravity="top"
+            android:hint="Event Description"
+            android:inputType="text|textMultiLine"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/createEventLocationEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/createEventTitleEditText"></EditText>
+
+
+        <EditText
+            android:id="@+id/createEventLocationEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:fontFamily="@font/cairoregular"
+            android:gravity="top"
+            android:hint="Event Location"
+            android:inputType="text|textMultiLine"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/createEventDurationEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/createEventDescEditText"></EditText>
+
+        <EditText
+            android:id="@+id/createEventDurationEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:background="@null"
+            android:fontFamily="@font/cairoregular"
+            android:gravity="top"
+            android:hint="Event Duration"
+            android:inputType="text|textMultiLine"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/createEventDatePickerButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/createEventLocationEditText"></EditText>
+
+
+
+        <ProgressBar
+            android:id="@+id/activityPostCardProgressbar"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@id/createEventDescEditText"
+            app:layout_constraintEnd_toEndOf="@id/createEventDescEditText"
+            app:layout_constraintTop_toTopOf="@id/createEventDescEditText"
+            app:layout_constraintBottom_toBottomOf="@id/createEventDescEditText"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/createEventDatePickerButton"
+            style="?android:spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openDatePicker"
+            android:text="Event Date"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createEventDurationEditText" />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/gallery"
+            android:layout_marginStart="8dp"
+            android:id="@+id/createEventGalleryImageView"
+            app:layout_constraintStart_toEndOf="@id/createEventDurationEditText"
+            app:layout_constraintTop_toTopOf="@id/createEventDurationEditText"
+            app:layout_constraintBottom_toBottomOf="@id/createEventDurationEditText"
+            android:tooltipText="upload media"
+            />
+
+        <Button
+            android:id="@+id/createEventTimeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="popTimePicker"
+            android:text="Event Time"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/createEventDatePickerButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/createEventDatePickerButton" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

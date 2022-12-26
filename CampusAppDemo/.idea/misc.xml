@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Source_Code/AndroidWorld/CampusAppDemo/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Source_Code/AndroidWorld/CampusAppDemo/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Source_Code/AndroidWorld/DoHere/G57-Campus-App/CampusAppDemo/app/src/main/res/drawable/ic_bg_topheader.xml" value="0.1" />
+        <entry key="..\:/Source_Code/AndroidWorld/DoHere/G57-Campus-App/CampusAppDemo/app/src/main/res/drawable/ic_news_black.xml" value="0.1" />
+        <entry key="..\:/Source_Code/AndroidWorld/DoHere/G57-Campus-App/CampusAppDemo/app/src/main/res/layout/activity_login.xml" value="0.3333333333333333" />
+        <entry key="..\:/Source_Code/AndroidWorld/DoHere/G57-Campus-App/CampusAppDemo/app/src/main/res/layout/activity_main.xml" value="0.13385416666666666" />
+        <entry key="..\:/Source_Code/AndroidWorld/DoHere/G57-Campus-App/CampusAppDemo/app/src/main/res/layout/activity_post_card.xml" value="0.16799999999999998" />
+        <entry key="..\:/Source_Code/AndroidWorld/DoHere/G57-Campus-App/CampusAppDemo/app/src/main/res/layout/activity_registration.xml" value="0.259375" />
+<<<<<<< HEAD
+        <entry key="..\:/Source_Code/AndroidWorld/DoHere/G57-Campus-App/CampusAppDemo/app/src/main/res/layout/fragment_dashboard.xml" value="0.259375" />
+=======
+        <entry key="app/src/main/res/drawable/ic_baseline_add_location_alt_24.xml" value="0.15462962962962962" />
+        <entry key="app/src/main/res/drawable/ic_baseline_bloodtype_24.xml" value="0.15462962962962962" />
+        <entry key="app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.15462962962962962" />
+        <entry key="app/src/main/res/drawable/ic_baseline_phone_android_24.xml" value="0.15462962962962962" />
+>>>>>>> 9cabf8516f932c2a074dc1c902072e5887e785ac
+        <entry key="app/src/main/res/drawable/ic_bg_topheader.xml" value="0.10520833333333333" />
+        <entry key="app/src/main/res/drawable/logoutbuttonbackground.xml" value="0.15462962962962962" />
+        <entry key="app/src/main/res/drawable/profilebackground.xml" value="0.15462962962962962" />
+        <entry key="app/src/main/res/layout/activity_event_card.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.11388888888888889" />
+        <entry key="app/src/main/res/layout/activity_market_place_card.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_notice_card.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_post_card.xml" value="0.19025641025641027" />
+        <entry key="app/src/main/res/layout/activity_report_card.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.11018518518518519" />
+        <entry key="app/src/main/res/menu/nav_menu.xml" value="0.19322916666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

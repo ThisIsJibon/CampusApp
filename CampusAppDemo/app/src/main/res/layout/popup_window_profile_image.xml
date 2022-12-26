@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="100dp"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:weightSum="2"
+    android:background="#293139">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:orientation="horizontal"
+        android:id="@+id/topLayout"
+        android:gravity="center"
+        >
+
+
+
+        <TextView
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="#2196F3"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/cairoregular"/>
+
+
+        <TextView
+            android:id="@+id/uploadProfilePictureButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload"
+            android:textColor="#2196F3"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/cairoregular"
+            android:paddingLeft="130dp"/>
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/selectProfilePictureLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:paddingLeft="25dp">
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/select"
+            android:layout_gravity="center"
+            android:background="#FFF"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="Select Profile Picture"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#FFF"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/viewProfilePictureLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:paddingLeft="25dp">
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/view"
+            android:layout_gravity="center"
+            android:background="#FFF"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="View Profile Picture"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:textColor="#FFF"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

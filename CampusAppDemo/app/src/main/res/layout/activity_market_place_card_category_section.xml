@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MarketPlaceCardCategorySectionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:background="@color/blue800">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/ic_baseline_arrow_circle_left_24"
+                android:id="@+id/categorySectionBackButton"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+                android:text="All Categories"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/antonregular"/>
+
+
+        </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="600dp"
+           android:orientation="vertical"
+           android:weightSum="12"
+           android:layout_marginTop="10dp"
+           android:layout_gravity="center">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:orientation="horizontal"
+               android:background="@color/blue700">
+
+               <ImageView
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_gravity="center"
+                   android:src="@drawable/close"
+                   android:layout_marginLeft="15dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Women's Clothing and Shoes"
+                   android:textColor="@color/white"
+                   android:textSize="15sp"
+                   android:layout_gravity="center"
+                   android:fontFamily="@font/cairolight"
+                   android:layout_marginLeft="10dp"/>
+
+
+           </LinearLayout>
+
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:orientation="horizontal"
+               android:layout_marginTop="5dp"
+               android:background="@color/blue700">
+
+               <ImageView
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_gravity="center"
+                   android:src="@drawable/close"
+                   android:layout_marginLeft="15dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Men's Clothing and Shoes"
+                   android:textColor="@color/white"
+                   android:textSize="15sp"
+                   android:layout_gravity="center"
+                   android:fontFamily="@font/cairolight"
+                   android:layout_marginLeft="10dp"/>
+
+
+           </LinearLayout>
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:orientation="horizontal"
+               android:layout_marginTop="5dp"
+               android:background="@color/blue700">
+
+               <ImageView
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_gravity="center"
+                   android:src="@drawable/close"
+                   android:layout_marginLeft="15dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Books , Movies and Music"
+                   android:textColor="@color/white"
+                   android:textSize="15sp"
+                   android:layout_gravity="center"
+                   android:fontFamily="@font/cairolight"
+                   android:layout_marginLeft="10dp"/>
+
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:orientation="horizontal"
+               android:layout_marginTop="5dp"
+               android:background="@color/blue700">
+
+               <ImageView
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_gravity="center"
+                   android:src="@drawable/close"
+                   android:layout_marginLeft="15dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Home Goods and Decor"
+                   android:textColor="@color/white"
+                   android:textSize="15sp"
+                   android:layout_gravity="center"
+                   android:fontFamily="@font/cairolight"
+                   android:layout_marginLeft="10dp"/>
+
+
+           </LinearLayout>
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:orientation="horizontal"
+               android:layout_marginTop="5dp"
+               android:background="@color/blue700">
+
+               <ImageView
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_gravity="center"
+                   android:src="@drawable/close"
+                   android:layout_marginLeft="15dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Health  and Beauty"
+                   android:textColor="@color/white"
+                   android:textSize="15sp"
+                   android:layout_gravity="center"
+                   android:fontFamily="@font/cairolight"
+                   android:layout_marginLeft="10dp"/>
+
+
+           </LinearLayout>
+
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:orientation="horizontal"
+               android:layout_marginTop="5dp"
+               android:background="@color/blue700">
+
+               <ImageView
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_gravity="center"
+                   android:src="@drawable/close"
+                   android:layout_marginLeft="15dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Lagguage and Bags"
+                   android:textColor="@color/white"
+                   android:textSize="15sp"
+                   android:layout_gravity="center"
+                   android:fontFamily="@font/cairolight"
+                   android:layout_marginLeft="10dp"/>
+
+
+           </LinearLayout>
+
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:orientation="horizontal"
+               android:layout_marginTop="5dp"
+               android:background="@color/blue700">
+
+               <ImageView
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_gravity="center"
+                   android:src="@drawable/close"
+                   android:layout_marginLeft="15dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Musical Instrument"
+                   android:textColor="@color/white"
+                   android:textSize="15sp"
+                   android:layout_gravity="center"
+                   android:fontFamily="@font/cairolight"
+                   android:layout_marginLeft="10dp"/>
+
+
+           </LinearLayout>
+
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:orientation="horizontal"
+               android:layout_marginTop="5dp"
+               android:background="@color/blue700">
+
+               <ImageView
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_gravity="center"
+                   android:src="@drawable/close"
+                   android:layout_marginLeft="15dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Sporting Goods"
+                   android:textColor="@color/white"
+                   android:textSize="15sp"
+                   android:layout_gravity="center"
+                   android:fontFamily="@font/cairolight"
+                   android:layout_marginLeft="10dp"/>
+
+
+           </LinearLayout>
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:orientation="horizontal"
+               android:layout_marginTop="5dp"
+               android:background="@color/blue700">
+
+               <ImageView
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_gravity="center"
+                   android:src="@drawable/close"
+                   android:layout_marginLeft="15dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Electronics"
+                   android:textColor="@color/white"
+                   android:textSize="15sp"
+                   android:layout_gravity="center"
+                   android:fontFamily="@font/cairolight"
+                   android:layout_marginLeft="10dp"/>
+
+
+           </LinearLayout>
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:orientation="horizontal"
+               android:layout_marginTop="5dp"
+               android:background="@color/blue700">
+
+               <ImageView
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_gravity="center"
+                   android:src="@drawable/close"
+                   android:layout_marginLeft="15dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Vehicles"
+                   android:textColor="@color/white"
+                   android:textSize="15sp"
+                   android:layout_gravity="center"
+                   android:fontFamily="@font/cairolight"
+                   android:layout_marginLeft="10dp"/>
+
+
+           </LinearLayout>
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:orientation="horizontal"
+               android:layout_marginTop="5dp"
+               android:background="@color/blue700">
+
+               <ImageView
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_gravity="center"
+                   android:src="@drawable/close"
+                   android:layout_marginLeft="15dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Furniture"
+                   android:textColor="@color/white"
+                   android:textSize="15sp"
+                   android:layout_gravity="center"
+                   android:fontFamily="@font/cairolight"
+                   android:layout_marginLeft="10dp"/>
+
+
+           </LinearLayout>
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:orientation="horizontal"
+               android:layout_marginTop="5dp"
+               android:background="@color/blue700">
+
+               <ImageView
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_gravity="center"
+                   android:src="@drawable/close"
+                   android:layout_marginLeft="15dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Miscelllaneous"
+                   android:textColor="@color/white"
+                   android:textSize="15sp"
+                   android:layout_gravity="center"
+                   android:fontFamily="@font/cairolight"
+                   android:layout_marginLeft="10dp"/>
+
+
+           </LinearLayout>
+
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:orientation="horizontal"
+               android:layout_marginTop="5dp"
+               android:layout_marginBottom="2dp"
+               android:background="@color/blue700">
+
+               <ImageView
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_gravity="center"
+                   android:src="@drawable/close"
+                   android:layout_marginLeft="15dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Women's Clothing and Shoes"
+                   android:textColor="@color/white"
+                   android:textSize="15sp"
+                   android:layout_gravity="center"
+                   android:fontFamily="@font/cairolight"
+                   android:layout_marginLeft="10dp"/>
+
+
+           </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+       </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>

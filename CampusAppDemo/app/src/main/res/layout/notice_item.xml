@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/noticeItemPostedByLiteral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/cairobold"
+        android:text="Posted By"
+        android:textColor="@color/blue700"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/noticeItemNoticeDesc"
+        app:layout_constraintTop_toBottomOf="@+id/noticeItemNoticeDesc" />
+
+    <TextView
+        android:id="@+id/noticeItemDeadlineLiteral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/cairobold"
+        android:text="Deadline"
+        android:textColor="@color/blue700"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/noticeItemNoticeDesc"
+        app:layout_constraintTop_toBottomOf="@+id/noticeItemPostedByHostNameTextView" />
+
+
+    <TextView
+        android:id="@+id/noticeItemDeadlineTextview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/cairomedium"
+        android:text="20th may"
+        android:textColor="@color/blue700"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noticeItemDeadlineLiteral" />
+
+
+    <TextView
+        android:id="@+id/noticeItemNoticeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/cairobold"
+        android:text="Title"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/noticeItemNoticeDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/cairomedium"
+        android:text="Description"
+        android:textColor="@color/blue700"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noticeItemNoticeTitle" />
+
+    <TextView
+        android:id="@+id/noticeItemPostedByHostNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="12dp"
+        android:text="publsiher Name"
+        android:textColor="@color/blue700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noticeItemPostedByLiteral" />
+
+    <TextView
+        android:id="@+id/noticeItemPostedDateTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Posted : 5 days ago"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noticeItemDeadlineTextview" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/gray_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noticeItemPostedDateTextview" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

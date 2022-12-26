@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue700"
+    tools:context=".EventCardCreateEventActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/eventCardCreateEventTopConstraintLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/blue800">
+
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="32dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/eventCardCreateEventBackButton"
+            android:src="@drawable/ic_baseline_arrow_circle_left_24"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/eventCardCreateEventBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventCardCreateEventText"
+            android:layout_marginLeft="10dp"
+            android:text="Create Event"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:fontFamily="@font/cairoextralight"
+            android:textColor="@color/white" />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:text="Cancel"
+            android:fontFamily="@font/cairoextralight"
+            android:id="@+id/eventCardCreateEventCancelButton"
+            android:layout_marginRight="5dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/eventCardCreateEventSecondConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/eventCardCreateEventTopConstraintLayout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="42dp"
+            android:src="@drawable/profile"
+            android:layout_marginLeft="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/eventCardCreateEventProfile"/>
+
+        <TextView
+            android:id="@+id/eventCardCreateEventNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mahinur Alam"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/eventCardCreateEventProfile"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Profile"
+            android:textSize="10sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/eventCardCreateEventProfile"
+            android:layout_marginLeft="10dp"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <TextView
+        android:id="@+id/eventCardCreateEventDetailsTextview"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCardCreateEventSecondConstraintLayout"
+        android:layout_marginLeft="15dp"
+        android:text="Event Details"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/antonregular" />
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCardCreateEventDetailsTextview"
+        android:layout_margin="10dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:id="@+id/eventCardCreateEventNAmeTextFieldLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event Name"
+        android:textColorHint="@color/white"
+        app:hintTextColor="@color/white"
+        app:boxStrokeColor="@color/black"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:id="@+id/eventName"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCardCreateEventNAmeTextFieldLayout"
+        android:layout_margin="10dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:id="@+id/eventCardCreateEventStartTimeTextFieldLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Start Date and Time"
+        android:textColorHint="@color/white"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_baseline_arrow_drop_down_24"
+        app:hintTextColor="@color/white"
+        app:boxStrokeColor="@color/black"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/eventCardCreateEventAutocompleteTextview"
+            android:textColor="@color/white"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

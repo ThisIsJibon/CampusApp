@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PostCardActivity"
+    android:fillViewport="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/createNoticeTopConstraintLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:id="@+id/createPostCancelImageView"
+                android:onClick="onCreatePostCancelImageViewClicked"
+                android:src="@drawable/close"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/createPostPublishButton"
+                android:text="Publish"
+                android:fontFamily="@font/cairobold"
+                android:textSize="20dp"
+                android:onClick="onCreatePostPublishTextViewClicked"
+                android:textColor="@color/blue700"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/craetepostMainImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="craetepostMainImageViewClicked"
+            android:scaleType="centerInside"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/createNoticeTopConstraintLayout" />
+
+        <EditText
+            android:id="@+id/createPostEditText"
+            android:fontFamily="@font/cairoregular"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="what are your thoughts?"
+            android:inputType="text|textMultiLine"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@id/createPostBottomConstraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/craetepostMainImageView"></EditText>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@color/bottom_bg"
+            android:id="@+id/createPostBottomConstraintLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/font"
+                    android:id="@+id/createPostFontImageView"
+                    android:layout_marginStart="8dp"
+                    android:tooltipText="font"
+                    />
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/quotes"
+                    android:layout_marginStart="8dp"
+                    android:tooltipText="quote"
+                    android:id="@+id/createPostQuotesImageView"/>
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/section"
+                    android:layout_marginStart="8dp"
+                    android:id="@+id/createPostSectionImageView"
+                    android:tooltipText="section"
+                    />
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/link"
+                    android:layout_marginStart="8dp"
+                    android:id="@+id/createPostLinkImageView"
+                    android:tooltipText="add hyperlink"
+                    />
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/bullet"
+                    android:layout_marginStart="8dp"
+                    android:id="@+id/createPostBulletImageView"
+                    android:tooltipText="add onto bullet list"
+                    />
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/at"
+                    android:layout_marginStart="8dp"
+                    android:id="@+id/createAtQuotesImageView"
+                    android:tooltipText="mention user"
+                    />
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/gallery"
+                    android:layout_marginStart="8dp"
+                    android:id="@+id/createPostGalleryImageView"
+                    android:tooltipText="upload media"
+                    />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/activityPostCardProgressbar"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@id/createPostEditText"
+            app:layout_constraintEnd_toEndOf="@id/createPostEditText"
+            app:layout_constraintTop_toTopOf="@id/createPostEditText"
+            app:layout_constraintBottom_toBottomOf="@id/createPostEditText"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

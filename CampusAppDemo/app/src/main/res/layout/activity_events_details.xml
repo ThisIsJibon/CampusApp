@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:fillViewport="true"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EventsDetailsActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".EventsDetailsActivity">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/eventDetailsEventImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/BottomRoundedImageView"
+            app:srcCompat="@drawable/sydney_image" />
+
+        <TextView
+            android:id="@+id/eventDetailsEventNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/cairobold"
+            android:text="Event Title"
+            android:textColor="@color/blue700"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventDetailsEventImageView" />
+
+        <ImageView
+            android:id="@+id/eventDetailsClockImageView"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/calendar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventDetailsEventNameTextView" />
+
+        <TextView
+            android:id="@+id/eventDetailsStartTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/cairolight"
+            android:text="Fri 25 dec - 9:00 AM"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/eventDetailsClockImageView"
+            app:layout_constraintStart_toEndOf="@id/eventDetailsClockImageView"
+            app:layout_constraintTop_toTopOf="@id/eventDetailsClockImageView" />
+
+        <ImageView
+            android:id="@+id/eventDetailsLocationImageView"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventDetailsClockImageView" />
+
+        <TextView
+            android:id="@+id/eventDetailsEventLocationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/cairolight"
+            android:text="Central Auditorium"
+            android:textColor="@color/blue700"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/eventDetailsLocationImageView"
+            app:layout_constraintStart_toEndOf="@id/eventDetailsLocationImageView"
+            app:layout_constraintTop_toTopOf="@id/eventDetailsLocationImageView" />
+
+        <TextView
+            android:id="@+id/eventDetailsPeopleGoingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/cairolight"
+            android:text="250 people going"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/eventDetailsStartTimeTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/eventDetailsStartTimeTextView" />
+
+        <TextView
+            android:id="@+id/eventDetailsDurationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/cairolight"
+            android:text="3 hour"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventDetailsPeopleGoingTextView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/clock"
+            app:layout_constraintBottom_toBottomOf="@id/eventDetailsDurationTextView"
+            app:layout_constraintEnd_toStartOf="@id/eventDetailsDurationTextView"
+            app:layout_constraintTop_toTopOf="@id/eventDetailsDurationTextView" />
+
+        <TextView
+            android:id="@+id/eventDetailsDescLiteral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/cairoregular"
+            android:text="Description"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventDetailsEventLocationTextView" />
+
+        <TextView
+            android:id="@+id/eventDetailsDescTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/cairolight"
+            android:text="Onek joss event hobe. \nshobai ashben... https://www.youtube.com/"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventDetailsDescLiteral" />
+
+        <TextView
+            android:id="@+id/eventDetailsHostLiteral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/cairoregular"
+            android:text="Host"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventDetailsDescTextView" />
+
+        <TextView
+            android:id="@+id/eventDetailsHostTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/cairolight"
+            android:text="Mahinur Alam"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/eventDetailsHostLiteral"
+            app:layout_constraintTop_toBottomOf="@id/eventDetailsHostLiteral" />
+
+        <TextView
+            android:id="@+id/eventDetailsRemindMeLiteral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/cairoregular"
+            android:text="Remind Me"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventDetailsHostTextView" />
+
+        <ImageView
+            android:id="@+id/eventDetailsRemindMeImageView"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:onClick="onEventDetailsRemindMeImageViewClick"
+            android:src="@drawable/ic_upvote_gray_foreground"
+            app:layout_constraintBottom_toBottomOf="@+id/eventDetailsRemindMeLiteral"
+            app:layout_constraintStart_toEndOf="@+id/eventDetailsRemindMeLiteral"
+            app:layout_constraintTop_toTopOf="@+id/eventDetailsRemindMeLiteral" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

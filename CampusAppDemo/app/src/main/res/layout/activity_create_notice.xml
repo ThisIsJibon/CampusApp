@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateNoticeActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CreateEventActivity"
+        android:fillViewport="true"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            >
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/createNoticeTopConstraintLayout"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:id="@+id/createNoticeCancelImageView"
+                    android:onClick="onCreateEventCancelImageViewClicked"
+                    android:src="@drawable/close"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/createNoticePublishButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/cairoregular"
+                    android:onClick="onCreateEventHostButtonClicked"
+                    android:text="Publish Notice"
+                    android:textColor="@color/blue700"
+                    android:textSize="20dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/createEventMainImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onCreateEventMainImageViewClicked"
+                android:scaleType="centerInside"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/createNoticeTopConstraintLayout" />
+
+            <EditText
+                android:id="@+id/createNoticeTitleEditText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:fontFamily="@font/cairobold"
+                android:gravity="top"
+                android:hint="Notice Title"
+                android:inputType="text|textMultiLine"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createEventMainImageView"></EditText>
+
+            <EditText
+                android:id="@+id/createNoticeDescEditText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:fontFamily="@font/cairoregular"
+                android:gravity="top"
+                android:hint="Notice Description"
+                android:inputType="text|textMultiLine"
+                android:padding="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createNoticeLinkeEditText"></EditText>
+
+
+            <EditText
+                android:id="@+id/createNoticeDeadlineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:fontFamily="@font/cairoregular"
+                android:gravity="top"
+                android:hint="Deadline"
+                android:inputType="text|textMultiLine"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/createNoticeTitleEditText"></EditText>
+
+            <EditText
+                android:id="@+id/createNoticeLinkeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:fontFamily="@font/cairoregular"
+                android:gravity="top"
+                android:hint="Add Links"
+                android:inputType="text|textMultiLine"
+                android:padding="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/createNoticeDeadlineEditText"></EditText>
+
+
+
+            <ProgressBar
+                android:id="@+id/createNoticeProgressbar"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@id/createNoticeDescEditText"
+                app:layout_constraintEnd_toEndOf="@id/createNoticeDescEditText"
+                app:layout_constraintTop_toTopOf="@id/createNoticeDescEditText"
+                app:layout_constraintBottom_toBottomOf="@id/createNoticeDescEditText"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
